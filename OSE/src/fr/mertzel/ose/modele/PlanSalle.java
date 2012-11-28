@@ -1,8 +1,9 @@
 package fr.mertzel.ose.modele;
 
 import java.util.ArrayList ;
+import java.util.Iterator;
 
-public class PlanSalle {
+public class PlanSalle implements Iterable <PlanSalle.Poste>{
 	
 	public class Poste {
 		private ArrayList<Poste> postesVisibles ;
@@ -68,6 +69,7 @@ public class PlanSalle {
 		public int nbPostesVisibles(){
 			return this.postesVisibles.size() ;
 		}
+		
 	}
 
 	private String nom ;
@@ -156,5 +158,11 @@ public class PlanSalle {
 				}
 			}
 		}
+	}
+
+	@Override
+	public Iterator<Poste> iterator() {
+		// TODO Auto-generated method stub
+		return lesPostes.iterator();
 	}
 }
